@@ -1,16 +1,12 @@
 'use strict';
 //the hours that the store will be open
 let openHours = ['6am:', '7am:','8am:', '9am:', '10am:', '11am:', '12pm:','1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm', '7pm:'];
-
 //stop 1: window into the DOM
 // 1 way - document.getElementById - method that will take a string for the ID
 // 2nd - document.querySelector - method that takes in a string, id, class, element type
-
 let htmlBodyWindow = document.getElementById('sales');
 console.log(htmlBodyWindow);
 console.dir(htmlBodyWindow);
-
-
 //start of city objects
 //seattle object
 let seattle = {
@@ -82,14 +78,12 @@ let lima = {
     this.randomC = Math.round((random(this.minV, this.maxV)) * this.avgC);
   }
 };
-
 // funtion that takes two numbers and picks a random number between them.
 function random(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
-
 //function that creates teh array for each store
 function createArr(arr){
   for(let i = 0; i < openHours.length; i++){
@@ -98,13 +92,9 @@ function createArr(arr){
     arr.totalC += arr.randomC;
   }
 }
-
 // DOM Manipulation
-
-//step 1 - js needs a window into the dom normally at the top 
-
+//step 1 - js needs a window into the dom normally at the top
 seattle.render = function(){
-
   createArr(this);
   //step 2 - js will create an element - document.createElement - method, string of the html element you want to create
   let h2Elem = document.createElement('h2');
@@ -112,19 +102,15 @@ seattle.render = function(){
   h2Elem.textContent = this.name;
   //step 4 - add it to the DOM -- parent.appendChild(child)
   htmlBodyWindow.appendChild(h2Elem);
-
   let ulElem = document.createElement('ul');
   htmlBodyWindow.appendChild(ulElem);
-
   for(let i = 0; i < this.custEachHour.length; i++){
     let hour = this.custEachHour[i];
     let liElem = document.createElement('li');
     liElem.textContent = hour;
     ulElem.appendChild(liElem);
   }
-
 };
-
 seattle.render();
 
 createArr(seattle);
