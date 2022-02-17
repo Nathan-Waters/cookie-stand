@@ -95,5 +95,6 @@ function renderAllStoresO() {
 renderAllStoresO();
 
 //creation!
+
 renderHeader();
 seattle.renderBody();
