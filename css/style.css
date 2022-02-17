@@ -1,6 +1,7 @@
 /* header content */
 body {
-  min-width: 450px;
+  width: 1280px;
+  margin: auto;
   background-color: #ff8c69;
 }
 header {
@@ -16,9 +17,6 @@ nav img {
 }
 
 /* main */
-img {
-
-}
 
 
 div {
