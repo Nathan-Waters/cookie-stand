@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Cookie Stand</title>
-    <link rel="stylesheet" href="../cookie-stand/css/reset.css">
-    <link rel="stylesheet" href="../cookie-stand/css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   
   <body>
@@ -16,12 +16,35 @@
         <a href="merch.html">Merch</a>
       </nav>
     </header>
+      <!-- start of form to create new city locations -->
+    <form id="create-New-Store">
+      <fieldset>
+        <legend>Salmon Cookies World Wide!</legend>
+        <!--  -->
+        <label for="name">City Name:</label>
+        <input type="text" name="name" id="name">
+
+        <label for="minV">Minimum Patron Amount:</label>
+        <input type="text" name="minV" id="minV">
+
+        <label for="maxV">Maximum Patron Amount:</label>
+        <input type="text" name="maxV" id="maxV">
+
+        <label for="avgC">Average Patron Amount:</label>
+        <input type="text" name="avgC" id="avgC">
+
+        <button type="submit">Submit</button>
+
+      </fieldset>
+    </form>
     
+   
+   
     <table id="table">
     </table>
 
     <footer>
-      <script src="../cookie-stand/app.js" type="text/javascript"></script>
+      <script src="/app.js" type="text/javascript"></script>
     </footer>
   </body>
 </html>
