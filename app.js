@@ -5,6 +5,8 @@ let htmlBodyWindow = document.getElementById('table');
 let openHours = ['6am', '7am','8am', '9am', '10am', '11am', '12pm','1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let storeCreation = [];
 
+let createNewStore = document.getElementById('create-New-Store');
+
 //constructor - starts with function and capital letters
 // parameters - unique properties
 
@@ -26,11 +28,11 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 // function that creates teh array for each store
-Store.prototype.createArr = function (arr){
+Store.prototype.createArr = function (){
   for(let i = 0; i < openHours.length; i++){
-    arr.randomize();
-    arr.custEachHour.push(arr.randomC);
-    arr.totalC += arr.randomC;
+    this.randomize();
+    this.custEachHour.push(this.randomC);
+    this.totalC += this.randomC;
   }
 };
 
@@ -89,12 +91,46 @@ let lima = new Store('Lima', 2, 16, 4.6);
 function renderAllStoresO() {
   for (let i = 0; i < storeCreation.length; i++) {
     let currentStore = storeCreation[i];
-    currentStore.createArr(storeCreation[i]);
+    currentStore.createArr();
   }
 }
 renderAllStoresO();
 
-//creation!
-
+//creating the table
 renderHeader();
 seattle.renderBody();
+
+//creating new lines in the table
+function handleSubmit(event){
+  event.preventDefault();
+
+  let name = event.target.name.value;
+  let minV = event.target.minV.value;
+  let maxV = event.target.maxV.value;
+  let avgC = event.target.avgC.value;
+
+  let newStore = new Store(name, minV, maxV, avgC);
+
+  newStore.createArr();
+  createNewStore.reset();
+
+  let currentCity = newStore;
+  let createR = document.createElement('tr');
+  let createD = document.createElement('td');
+  createD.textContent = currentCity.storeName;
+  htmlBodyWindow.appendChild(createR);
+  createR.appendChild(createD);
+
+  //shows pulls the data out of the arrays
+  for(let j = 0; j < currentCity.custEachHour.length; j++){
+    let hourlyCust = currentCity.custEachHour[j];
+    let createNewD = document.createElement('td');
+    createNewD.textContent = hourlyCust;
+    createR.appendChild(createNewD);
+  }
+  let totalCookies = document.createElement('td');
+  totalCookies.textContent = currentCity.totalC;
+  createR.appendChild(totalCookies);
+}
+
+createNewStore.addEventListener('submit', handleSubmit);
