@@ -50,7 +50,7 @@ Store.prototype.renderBody = function(){
     createD.textContent = currentCity.storeName;
     htmlBodyWindow.appendChild(createR);
     createR.appendChild(createD);
-    //shows pulls the data out of the arrays 
+    //shows pulls the data out of the arrays
     for(let j = 0; j < currentCity.custEachHour.length; j++){
       let hourlyCust = currentCity.custEachHour[j];
       let createNewD = document.createElement('td');
