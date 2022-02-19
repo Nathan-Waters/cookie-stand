@@ -5,14 +5,18 @@ body {
   margin: auto;
   background-color: #ff8c69;
 }
+
 header {
   text-align: center;
+  padding-bottom: 10px;
   margin: auto;
+  margin-bottom: 10px;
   height: 200;
   background-color: #ffb19a;
-  min-width: 450px;
+  height: 75px;
   border-radius: 10px;
 }
+
 nav a {
   margin-right: 50px;
   margin-left: 50px;
@@ -24,20 +28,40 @@ nav a {
 }
 nav img {
   max-width: 150px;
-  /* background-color: #ff6655; */
 }
 
 /* main */
-
-
+main {
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+}
 div {
   margin: auto;
   text-align: center;
   border-style: ridge;
   border: 2.5px solid black;
+  border-radius: 15px;
   padding: 5px;
-  flex: auto;
-  width: 50%;
   background-color: #ff6655;
+  width: 45%;
 }
 
+#familyPic {
+  height: 70%;
+  width: 70%;
+  float: left;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+/* table styles and form*/
+
+table, th, td {
+  border: solid;
+  width: 960px;
+}
+fieldset {
+  border: solid;
+  padding: 5px;
+}
