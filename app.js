@@ -1,7 +1,7 @@
 'use strict';
 
 let htmlBodyWindow = document.getElementById('table');
-// let table = document.querySelector('table');
+
 let openHours = ['6am', '7am','8am', '9am', '10am', '11am', '12pm','1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let storeCreation = [];
 
@@ -81,6 +81,26 @@ function renderHeader(){
   thElem.appendChild(total);
 }
 
+function renderFooter(){
+  let superTotal = 0;
+  let createR = document.createElement('tfoot');
+  let createD = document.createElement('td');
+  createD.textContent = 'totals';
+  htmlBodyWindow.appendChild(createR);
+  createR.appendChild(createD);
+  for(let i = 0; i < openHours.length; i++){
+    for(let j = 0; j < storeCreation.length; j++){
+      let cell = (storeCreation[j].randomC[i]);
+      let createNewD =  document.createElement('td');
+      createNewD.textContent = cell;
+      console.log(cell);
+      createR.appendChild(createNewD);
+      // superTotal += cell;
+    }
+    // createR.appendChild(cell);
+  }
+}
+
 //initalizes all of the objects
 let seattle = new Store('Seattle', 23, 65, 6.3);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);
@@ -134,3 +154,4 @@ function handleSubmit(event){
 }
 
 createNewStore.addEventListener('submit', handleSubmit);
+renderFooter();

@@ -26,6 +26,7 @@ nav a {
   border-radius: 5px;
 
 }
+
 nav img {
   max-width: 150px;
 }
@@ -36,6 +37,7 @@ main {
   flex-wrap: wrap;
   display: flex;
 }
+
 div {
   margin: auto;
   text-align: center;
@@ -61,6 +63,7 @@ table, th, td {
   border: solid;
   width: 960px;
 }
+
 fieldset {
   border: solid;
   padding: 5px;
