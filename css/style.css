@@ -1,6 +1,6 @@
 /* header content */
 body {
-  width: 1280px;
+  width: 960px;
   margin: auto;
   background-color: #ff8c69;
 }
@@ -10,8 +10,17 @@ header {
   height: 200;
   background-color: #ffb19a;
   min-width: 450px;
+  border-radius: 10px;
 }
+nav a {
+  margin-right: 50px;
+  margin-left: 50px;
+  background-color: pink;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
 
+}
 nav img {
   max-width: 150px;
 }
